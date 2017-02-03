@@ -7,5 +7,6 @@ node('master') {
 
   stage ('Build cas-server-extension-duo') {
     sh 'mvn clean package install'
+    archiveArtifacts artifacts: 'target/cas-server-extension-duo-*.jar'
   }
 }
